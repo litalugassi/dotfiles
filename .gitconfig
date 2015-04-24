@@ -1,0 +1,20 @@
+[user]
+	name = "Iftach Bar "
+	email = iftachbar@gmail.com
+[core]
+	excludesfile = /Users/iftachbar/.gitignore_global
+	mergeoptions = --no-edit
+	pager = less -x4
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	st = status -sb
+    ci = commit
+[github]
+	user = barnash
+	token = 48b9362c7349d9be7e26b270fcd1e8ae
+[push]
+	default = upstream
