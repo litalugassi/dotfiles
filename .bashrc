@@ -9,6 +9,7 @@ CYAN="\[\e[0;36m\]"
 LIGHT="\[\e[0;37m\]"
 NC="\[\e[0m\]"
 
+
 PS1="<${BLUE}\u${NC}@${GREEN}\h${NC}:\W${NC}> \$ "
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -31,14 +32,25 @@ alias cdravello='cd ~/work/ravello'
 alias cdrounds='cd ~/work/rounds'
 alias cdpirates='cd ~/work/skillz/pirates'
 
+# Virtualenv
+#function va_active() { source "$HOME/.virtualenvs/$1/bin/active"; }
+#alias activate='va_activate'
+#complete -W "`ls $HOME/.virtualenvs`" activate
+#source /usr/local/bin/virtualenv-3.4
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 # json format
 alias tojson='python -mjson.tool'
 
 # Network utils
 alias nptul="lsof -nP -i4TCP | grep LISTEN"
 
-# Git
-source ~/.scripts/.git-completion.bash
+# Completion
+source ~/.git-completion.bash
+source ~/.dotfiles/tmux_completion
 
 # nginx
 alias nginx='sudo nginx'
@@ -49,5 +61,19 @@ alias vinginx='vim /usr/local/etc/nginx/nginx.conf'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 HISTCONTROL=ignoreboth
+
+# Check git managed directories
+function checkgitdir() {
+    # We use basename because if the file has ~ in it, it will not work
+    directory=`basename $1`
+    result=$(git --git-dir $directory/.git --work-tree $directory status --porcelain 2>/dev/null | wc -l | awk '{print $1}')
+    if [ "$result" != "0" ]; then
+        red="\x1B[31m"
+        nc="\x1B[0m"
+        echo -e "git directory ${red}${directory}${nc} is dirty"
+    fi
+}
+
+checkgitdir '~/.dotfiles'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
