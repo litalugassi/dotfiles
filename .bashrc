@@ -64,8 +64,7 @@ HISTCONTROL=ignoreboth
 
 # Check git managed directories
 function checkgitdir() {
-    # We use basename because if the file has ~ in it, it will not work
-    directory=`basename $1`
+    directory=$(cd $1; pwd)
     result=$(git --git-dir $directory/.git --work-tree $directory status --porcelain 2>/dev/null | wc -l | awk '{print $1}')
     if [ "$result" != "0" ]; then
         red="\x1B[31m"
@@ -74,7 +73,8 @@ function checkgitdir() {
     fi
 }
 
-checkgitdir '~/.dotfiles'
+checkgitdir "$HOME/.dotfiles"
+checkgitdir "/usr/local/etc/nginx"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
