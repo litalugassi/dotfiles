@@ -76,6 +76,8 @@ function checkgitdir() {
 checkgitdir "$HOME/.dotfiles"
 checkgitdir "/usr/local/etc/nginx"
 
+export PATH="$PATH:/usr/local/sbin"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
