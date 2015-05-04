@@ -38,7 +38,6 @@ alias cdpirates='cd ~/work/skillz/pirates'
 #complete -W "`ls $HOME/.virtualenvs`" activate
 #source /usr/local/bin/virtualenv-3.4
 export PIP_REQUIRE_VIRTUALENV=true
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
