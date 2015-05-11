@@ -74,6 +74,7 @@ function checkgitdir() {
 
 checkgitdir "$HOME/.dotfiles"
 checkgitdir "/usr/local/etc/nginx"
+checkgitdir "/etc"
 
 export PATH="$PATH:/usr/local/sbin"
 
