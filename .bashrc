@@ -50,6 +50,7 @@ alias nptul="lsof -nP -i4TCP | grep LISTEN"
 # Completion
 source ~/.git-completion.bash
 source ~/.dotfiles/tmux_completion
+source ~/.bash_completion
 
 # nginx
 alias nginx='sudo nginx'
