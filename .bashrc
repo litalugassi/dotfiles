@@ -77,6 +77,10 @@ checkgitdir "$HOME/.dotfiles"
 checkgitdir "/usr/local/etc/nginx"
 checkgitdir "/etc"
 
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
+
 export PATH="$PATH:/usr/local/sbin"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
