@@ -26,6 +26,7 @@ alias sl='source ~/.bashrc'
 alias vibrc='vim ~/.bashrc'
 alias wget='curl -O'
 alias grep='grep --color'
+alias stylecode="highlight -O rtf $1 -K 24 --style darkness"
 
 # Cd aliases
 alias cdravello='cd ~/work/ravello'
@@ -46,6 +47,7 @@ alias tojson='python -mjson.tool'
 
 # Network utils
 alias nptul="lsof -nP -i4TCP | grep LISTEN"
+alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d ' ' -f2"
 
 # Completion
 source ~/.git-completion.bash
