@@ -83,9 +83,15 @@ if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
 
-export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:/usr/local/sbin:/Users/iftachbar/work/rounds/tmux-cssh/"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/iftachbar/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/iftachbar/google-cloud-sdk/completion.bash.inc'
