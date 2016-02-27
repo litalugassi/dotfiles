@@ -10,3 +10,5 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 set wildmode=longest,list,full
 set wildmenu
+
+set backspace=2 " make backspace work like most other apps
