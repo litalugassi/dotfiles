@@ -96,4 +96,10 @@ source '/Users/iftachbar/google-cloud-sdk/path.bash.inc'
 # The next line enables shell command completion for gcloud.
 source '/Users/iftachbar/google-cloud-sdk/completion.bash.inc'
 
+# big panda
+source ~/.nvm/nvm.sh
+alias grunt12="nvm exec 0.12 grunt"
+source ~/.bigpandalogin
+
 source ~/.profile
+
