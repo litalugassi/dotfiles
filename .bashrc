@@ -27,6 +27,7 @@ alias vibrc='vim ~/.bashrc'
 alias wget='curl -O'
 alias grep='grep --color'
 alias stylecode="highlight -O rtf $1 -K 24 --style darkness"
+alias null="cat > /dev/null"
 
 # Cd aliases
 alias cdravello='cd ~/work/ravello'
