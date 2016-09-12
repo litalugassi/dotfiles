@@ -104,3 +104,6 @@ source ~/.bigpandalogin
 
 source ~/.profile
 
+
+# added by travis gem
+[ -f /Users/iftachbar/.travis/travis.sh ] && source /Users/iftachbar/.travis/travis.sh
