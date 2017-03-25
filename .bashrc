@@ -29,11 +29,6 @@ alias grep='grep --color'
 alias stylecode="highlight -O rtf $1 -K 24 --style darkness"
 alias null="cat > /dev/null"
 
-# Cd aliases
-alias cdravello='cd ~/work/ravello'
-alias cdrounds='cd ~/work/rounds'
-alias cdpirates='cd ~/work/skillz/pirates'
-
 # Virtualenv
 #function va_active() { source "$HOME/.virtualenvs/$1/bin/active"; }
 #alias activate='va_activate'
@@ -99,11 +94,9 @@ source '/Users/iftachbar/google-cloud-sdk/completion.bash.inc'
 
 # big panda
 source ~/.nvm/nvm.sh
-alias grunt12="nvm exec 0.12 grunt"
 source ~/.bigpandalogin
 
-source ~/.profile
-
+#source ~/.profile
 
 # added by travis gem
 [ -f /Users/iftachbar/.travis/travis.sh ] && source /Users/iftachbar/.travis/travis.sh
