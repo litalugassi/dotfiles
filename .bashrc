@@ -29,15 +29,6 @@ alias grep='grep --color'
 alias stylecode="highlight -O rtf $1 -K 24 --style darkness"
 alias null="cat > /dev/null"
 
-# Virtualenv
-#function va_active() { source "$HOME/.virtualenvs/$1/bin/active"; }
-#alias activate='va_activate'
-#complete -W "`ls $HOME/.virtualenvs`" activate
-#source /usr/local/bin/virtualenv-3.4
-export PIP_REQUIRE_VIRTUALENV=true
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
 # json format
 alias tojson='python -mjson.tool'
 
@@ -46,9 +37,9 @@ alias nptul="lsof -nP -i4TCP | grep LISTEN"
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d ' ' -f2"
 
 # Completion
-source ~/.git-completion.bash
-source ~/.dotfiles/tmux_completion
-source ~/.bash_completion
+source ~/dev/.dotfiles/.git-completion.bash
+source ~/dev/.dotfiles/tmux_completion
+source ~/dev/.dotfiles/.bash_completion
 
 # nginx
 alias nginx='sudo nginx'
@@ -71,32 +62,9 @@ function checkgitdir() {
     fi
 }
 
-checkgitdir "$HOME/.dotfiles"
-checkgitdir "/usr/local/etc/nginx"
+checkgitdir "$HOME/dev/.dotfiles"
 checkgitdir "/etc"
 
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
-
-export PATH="$PATH:/usr/local/sbin:/Users/iftachbar/work/rounds/tmux-cssh/"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/iftachbar/google-cloud-sdk/path.bash.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/iftachbar/google-cloud-sdk/completion.bash.inc'
-
-# big panda
-source ~/.nvm/nvm.sh
-source ~/.bigpandalogin
-
-#source ~/.profile
-
-# added by travis gem
-[ -f /Users/iftachbar/.travis/travis.sh ] && source /Users/iftachbar/.travis/travis.sh
