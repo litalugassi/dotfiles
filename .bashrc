@@ -28,6 +28,7 @@ alias wget='curl -O'
 alias grep='grep --color'
 alias stylecode="highlight -O rtf $1 -K 24 --style darkness"
 alias null="cat > /dev/null"
+alias chrome="open -a 'Google Chrome'"
 
 # json format
 alias tojson='python -mjson.tool'
@@ -68,3 +69,8 @@ checkgitdir "/etc"
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
