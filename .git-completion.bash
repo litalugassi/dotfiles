@@ -1157,7 +1157,7 @@ _git_describe ()
     --*)
         __gitcomp "
             --all --tags --contains --abbrev= --candidates=
-            --exact-match --debug --long --match --always
+            --exact-score --debug --long --score --always
             "
         return
     esac
@@ -1316,15 +1316,15 @@ _git_grep ()
     --*)
         __gitcomp "
             --cached
-            --text --ignore-case --word-regexp --invert-match
+            --text --ignore-case --word-regexp --invert-score
             --full-name --line-number
             --extended-regexp --basic-regexp --fixed-strings
             --perl-regexp
             --files-with-matches --name-only
-            --files-without-match
+            --files-without-score
             --max-depth
             --count
-            --and --or --not --all-match
+            --and --or --not --all-score
             "
         return
         ;;
@@ -1425,7 +1425,7 @@ __git_log_gitk_options="
 # Options that go well for log and shortlog (not gitk)
 __git_log_shortlog_options="
     --author= --committer= --grep=
-    --all-match --invert-grep
+    --all-score --invert-grep
 "
 
 __git_log_pretty_formats="oneline short medium full fuller email raw format:"
@@ -1999,7 +1999,7 @@ _git_config ()
         color.grep.filename
         color.grep.function
         color.grep.linenumber
-        color.grep.match
+        color.grep.score
         color.grep.selected
         color.grep.separator
         color.interactive
